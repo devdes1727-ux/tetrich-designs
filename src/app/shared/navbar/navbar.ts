@@ -1,0 +1,43 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-navbar',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './navbar.html',
+  styleUrl: './navbar.css'
+})
+export class NavbarComponent {
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleDarkMode() {
+
+    document.documentElement.classList.toggle('dark');
+
+    localStorage.setItem(
+      'theme',
+      document.documentElement.classList.contains('dark')
+        ? 'dark'
+        : 'light'
+    );
+
+  }
+
+  ngOnInit() {
+
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+
+  }
+
+}
+

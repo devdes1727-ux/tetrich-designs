@@ -1,0 +1,71 @@
+<header class="navbar">
+
+  <div class="navbar-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/images/logo-b.png" alt="logo" />
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="desktop-menu">
+
+      <a routerLink="/">Home</a>
+
+      <a>Services</a>
+
+      <a>Products</a>
+
+      <a>Blogs</a>
+
+      <a>Contact</a>
+
+      <!-- Dark Mode Button -->
+      <button (click)="toggleDarkMode()" class="dark-btn">
+        🌙
+      </button>
+
+      <!-- Resume Button -->
+      <button class="resume-btn">
+        Resume Download
+      </button>
+
+      <!-- Hire Me Button -->
+      <button class="hire-btn">
+        Hire Me
+      </button>
+
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-toggle" (click)="toggleMenu()">
+      ☰
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="mobile-menu">
+
+    <a routerLink="/">Home</a>
+
+    <a>Services</a>
+
+    <a>Products</a>
+
+    <a>Blogs</a>
+
+    <a>Contact</a>
+
+    <button class="resume-btn mobile-btn">
+      Resume Download
+    </button>
+
+    <button class="hire-btn mobile-btn">
+      Hire Me
+    </button>
+
+  </div>
+
+</header>

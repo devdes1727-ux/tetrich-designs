@@ -1,3 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/* GLOBAL WEBSITE CONTAINER */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #1e293b;
+}
 
-@import 'tailwindcss';
+.dark body {
+    color: #e2e8f0;
+}
+
+.site-container {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Desktop width */
+
+@media (min-width: 1024px) {
+
+    .site-container {
+        width: 90%;
+    }
+
+}
+
+
+/* Large screens */
+
+@media (min-width: 1536px) {
+
+    .site-container {
+        max-width: 1400px;
+    }
+
+}
+
+
+/* DARK MODE SUPPORT */
+
+.dark {
+    background: #0f172a;
+    color: white;
+}
+
+
+.dark .navbar {
+    background: #0f172a;
+}
+
+
+.dark .mobile-menu {
+    background: #0f172a;
+}
