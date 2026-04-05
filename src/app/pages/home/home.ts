@@ -20,33 +20,51 @@ export class HomeComponent {
   projects = [
 
     {
-      title: "Courier App",
-      category: "Mobile App · UI UX Design"
+      icon: "assets/images/coffee website landing.jpg",
+      title: "Website Landing Page",
+      category: "Coffee Website Landing Page Design"
     },
 
     {
+      icon: "assets/images/Ebike.jpg",
+      title: "Bijiliride",
+      category: "E-bike Rental servicemobile app design"
+    },
+
+    {
+      icon: "assets/images/dhaadyism.jpg",
+      title: "Dhaadyism",
+      category: "Logo Design & Branding for beard oil brand"
+    },
+
+    {
+      icon: "assets/images/mario.jpg",
+      title: "Game Design Documentation",
+      category: "Mario Game Dev with Godot Engine"
+    },
+
+    {
+      icon: "assets/images/stitch ux.jpg",
       title: "Tailorbird",
-      category: "Mobile App · UI UX Design"
+      category: "Garment stitching service mobile app design - UX Research & Wireframing"
     },
 
     {
-      title: "Parcend",
-      category: "Product UX Case Study"
+      icon: "assets/images/stitch ui.jpg",
+      title: "Tailorbird",
+      category: "Garment stitching service mobile app design - UI Design"
     },
 
     {
-      title: "Invoice Generator",
-      category: "Web + Mobile App Design"
+      icon: "assets/images/courier ux.jpg",
+      title: "Courier Service App",
+      category: "Induvidual & multiple Courier Service App UX Research & Wireframing"
     },
 
     {
-      title: "Protein Laddu",
-      category: "Logo & Packaging Design"
-    },
-
-    {
-      title: "DrMVP Healthcare",
-      category: "Web + Mobile Healthcare UX"
+      icon: "assets/images/courier ui.jpg",
+      title: "Courier Service App",
+      category: "Induvidual & multiple Courier Service App UI Design"
     }
 
   ];
@@ -56,53 +74,59 @@ export class HomeComponent {
 
     {
       name: "Figma & FigJam",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+      icon: "assets/images/figma.png"
     },
 
     {
       name: "Sketch",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg"
+      icon: "assets/images/sketch.png"
     },
 
     {
       name: "Adobe Photoshop",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+      icon: "assets/images/photoshop.png "
     },
 
     {
       name: "Adobe Illustrator",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
+      icon: "assets/images/illustrator.png"
     },
 
     {
       name: "Visual Studio Code",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+      icon: "assets/images/vscode.png"
     },
 
     {
       name: "WordPress",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg"
+      icon: "assets/images/wordpress.png"
     },
 
     {
-      name: "Angular",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+      name: "Storybook",
+      icon: "assets/images/storybook.png"
     },
 
     {
       name: "Paper & Pencil",
-      emoji: "✏"
+      icon: "assets/images/paperpencil.png"
     },
 
     {
       name: "Mixpanel",
-      emoji: "📊"
+      icon: "assets/images/mixpanel.png"
     },
 
     {
-      name: "Balsamiq / Storybook / Webflow",
-      emoji: "🧩"
+      name: "Balsamiq",
+      icon: "assets/images/balsamiq.png"
+    },
+
+    {
+      name: "webflow",
+      icon: "assets/images/webflow.png"
     }
+
 
   ];
 
@@ -111,11 +135,13 @@ export class HomeComponent {
 
     {
       id: "stitching",
-      title: "🧵 Stitching Garments",
+      title: "Stitching Garments",
       preview: [
         "Measurements",
         "Pattern Making",
-        "Fabric Cutting"
+        "Fabric Cutting",
+        "Stitching",
+        "Ironing & Packing"
       ],
       more: [
         "Stitching",
@@ -125,11 +151,13 @@ export class HomeComponent {
 
     {
       id: "printing",
-      title: "🎨 Textile Printing",
+      title: "Textile Printing",
       preview: [
         "Batik Printing",
         "Block Printing",
-        "Digital Printing"
+        "Digital Printing",
+        "Tie & Dye",
+        "Kalamkari Printing"
       ],
       more: [
         "Tie & Dye",
@@ -139,11 +167,13 @@ export class HomeComponent {
 
     {
       id: "fashion",
-      title: "👗 Fashion Design",
+      title: "Fashion Design",
       preview: [
         "Sketching & Illustration",
         "Moodboard Creation",
-        "Color Theory"
+        "Color Theory",
+        "Pattern Making",
+        "Garment Construction"
       ],
       more: [
         "Pattern Making",
@@ -153,11 +183,13 @@ export class HomeComponent {
 
     {
       id: "tshirt",
-      title: "👕 T-Shirt Printing",
+      title: "T-Shirt Printing",
       preview: [
-        "Create Frame with Designs",
+        "Frame making with Designs",
         "CMYK Color Separation",
-        "Color Pigment Creation"
+        "Color Pigment Creation",
+        "Machine Setup & Process",
+        "Ironing & Package"
       ],
       more: [
         "Machine Setup & Process",
@@ -167,11 +199,13 @@ export class HomeComponent {
 
     {
       id: "game",
-      title: "🎮 Game Design",
+      title: "Game Design",
       preview: [
         "UX for Games",
         "Level Design",
-        "Game Design Fundamentals"
+        "Game Design Fundamentals",
+        "Game Engine (Godot)",
+        "Testing & Player Psychology"
       ],
       more: [
         "Game Engine (Godot)",

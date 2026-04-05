@@ -1,19 +1,18 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
 /* GLOBAL WEBSITE CONTAINER */
 body {
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #1e293b;
-    margin: 0px;
-    padding: 0px;
+    background-color: #f8fafc;
+    color: #0f172a;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .dark body {
-    color: #e2e8f0;
+    background-color: #0f172a;
+    color: #f8fafc;
 }
-
-
-
-
 /* Desktop width */
 
 @media (min-width: 1024px) {

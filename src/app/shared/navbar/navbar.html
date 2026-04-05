@@ -10,15 +10,11 @@
     <!-- Desktop Menu -->
     <nav class="desktop-menu">
 
-      <a routerLink="/">Home</a>
-
-      <a>Services</a>
-
-      <a>Products</a>
-
-      <a>Blogs</a>
-
-      <a>Contact</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/services" routerLinkActive="active">Services</a>
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/blogs" routerLinkActive="active">Blogs</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
 
       <!-- Dark Mode Button -->
       <button (click)="toggleDarkMode()" class="dark-btn">
@@ -35,6 +31,16 @@
         Hire Me
       </button>
 
+      <!-- Cart Button -->
+      <a routerLink="/cart" class="relative hover:text-orange-600 transition-colors cursor-pointer mr-4" title="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span *ngIf="cartService.cartCount() > 0" class="absolute -top-2 -right-2 bg-orange-600 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs font-bold shadow-sm">
+          {{ cartService.cartCount() }}
+        </span>
+      </a>
+      
     </nav>
 
     <!-- Mobile Menu Button -->
@@ -49,14 +55,11 @@
   <div *ngIf="isMenuOpen" class="mobile-menu">
 
     <a routerLink="/">Home</a>
-
-    <a>Services</a>
-
-    <a>Products</a>
-
-    <a>Blogs</a>
-
-    <a>Contact</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/products">Products</a>
+    <a routerLink="/blogs">Blogs</a>
+    <a routerLink="/contact">Contact</a>
+    <a routerLink="/cart">Cart ({{ cartService.cartCount() }})</a>
 
     <button class="resume-btn mobile-btn">
       Resume Download
