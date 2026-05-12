@@ -14,8 +14,7 @@
 .navbar-container {
     max-width: 1200px;
     margin: auto;
-    padding: 16px 24px;
-
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,10 +33,10 @@
 .desktop-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
-
+    gap: 20px;
     font-weight: 500;
     color: #374151;
+    font-size: 14px;
 }
 
 
@@ -84,19 +83,14 @@
 /* Resume Button */
 
 .resume-btn {
-
     border: 1px solid #f97316;
-
     color: #f97316;
-
     padding: 8px 16px;
-
-    border-radius: 8px;
-
+    border-radius: 12px;
     background: transparent;
-
     cursor: pointer;
-
+    font-size: 14px;
+    font-weight: 600;
     transition: 0.3s ease;
 }
 
@@ -115,11 +109,13 @@
 
     padding: 8px 20px;
 
-    border-radius: 8px;
+    border-radius: 12px;
 
     border: none;
 
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
 
     transition: 0.3s ease;
 
@@ -188,17 +184,20 @@
 
 /* Dark Mode Overrides */
 :host-context(.dark) .navbar {
-    background: #020617; /* match products page bg */
+    background: #020617;
+    /* match products page bg */
     border-bottom: 1px solid #1e293b;
     box-shadow: none;
 }
 
-:host-context(.dark) .desktop-menu, :host-context(.dark) .mobile-toggle {
+:host-context(.dark) .desktop-menu,
+:host-context(.dark) .mobile-toggle {
     color: #f8fafc;
 }
 
 :host-context(.dark) .desktop-menu a:hover {
-    color: #818cf8; /* orange-400 */
+    color: #818cf8;
+    /* orange-400 */
 }
 
 :host-context(.dark) .mobile-menu {
