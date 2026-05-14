@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
@@ -15,60 +16,6 @@ export class HomeComponent {
   toggleSkill(id: string) {
     this.activeSkill = this.activeSkill === id ? null : id;
   }
-
-
-  projects = [
-
-    {
-      icon: "assets/images/coffee website landing.jpg",
-      title: "Website Landing Page",
-      category: "Coffee Website Landing Page Design"
-    },
-
-    {
-      icon: "assets/images/Ebike.jpg",
-      title: "Bijiliride",
-      category: "E-bike Rental servicemobile app design"
-    },
-
-    {
-      icon: "assets/images/dhaadyism.jpg",
-      title: "Dhaadyism",
-      category: "Logo Design & Branding for beard oil brand"
-    },
-
-    {
-      icon: "assets/images/mario.jpg",
-      title: "Game Design Documentation",
-      category: "Mario Game Dev with Godot Engine"
-    },
-
-    {
-      icon: "assets/images/stitch ux.jpg",
-      title: "Tailorbird",
-      category: "Garment stitching service mobile app design - UX Research & Wireframing"
-    },
-
-    {
-      icon: "assets/images/stitch ui.jpg",
-      title: "Tailorbird",
-      category: "Garment stitching service mobile app design - UI Design"
-    },
-
-    {
-      icon: "assets/images/courier ux.jpg",
-      title: "Courier Service App",
-      category: "Induvidual & multiple Courier Service App UX Research & Wireframing"
-    },
-
-    {
-      icon: "assets/images/courier ui.jpg",
-      title: "Courier Service App",
-      category: "Induvidual & multiple Courier Service App UI Design"
-    }
-
-  ];
-
 
   tools = [
 

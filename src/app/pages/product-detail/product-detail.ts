@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ProductService, Product } from '../../shared/services/product.service';
-import { CartService } from '../../shared/services/cart.service';
+import { ProductService, Product } from '../../shared/service/product.service';
+import { CartService } from '../../shared/service/cart.service';
 
 @Component({
   selector: 'app-product-detail',

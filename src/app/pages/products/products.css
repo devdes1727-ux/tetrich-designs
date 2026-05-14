@@ -1,1 +1,284 @@
-/* Additional custom styles can go here if Tailwind isn't enough, but empty for now as Tailwind handles everything */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.products-page {
+    position: relative;
+    padding: 40px 0px;
+    background: linear-gradient(to bottom,
+            #f8fafc,
+            #eef2ff);
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+/* Background Shapes */
+
+.bg-shape {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(100px);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: #fb923c;
+    top: -100px;
+    left: -80px;
+}
+
+.shape-2 {
+    width: 350px;
+    height: 350px;
+    background: #c4b5fd;
+    bottom: -120px;
+    right: -100px;
+}
+
+/* Header */
+
+.hero-section {
+    max-width: 1080px;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.hero-section p {
+    color: #64748b;
+    max-width: 720px;
+    margin: auto;
+}
+
+/* Grid */
+
+.products-grid {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s ease;
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.05),
+        0 2px 10px rgba(15, 23, 42, 0.04);
+}
+
+.product-card:hover {
+    box-shadow:
+        0 30px 60px rgba(99, 102, 241, 0.15),
+        0 10px 20px rgba(15, 23, 42, 0.06);
+    border-color: rgba(251, 146, 60, 0.35);
+}
+
+/* Image */
+
+.product-image {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+
+
+.category-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #0f172a;
+    font-size: 12px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Content */
+
+.product-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-top h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.product-card:hover .product-top h3 {
+    color: #ea580c;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.star-icon {
+    width: 16px;
+    height: 16px;
+    color: #facc15;
+}
+
+.rating-box span {
+    color: #475569;
+}
+
+/* Description */
+
+.description {
+    color: #64748b;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+/* Tags */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    transition: 0.3s ease;
+}
+
+
+/* Footer */
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.price {
+    font-size: 21px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Button */
+
+.access-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg,
+            #f97316,
+            #ea580c);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.35s ease;
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+}
+
+.access-btn:hover {
+    box-shadow: 0 18px 35px rgba(249, 115, 22, 0.35);
+}
+
+.arrow-icon {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.access-btn:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .products-page {
+        padding: 60px 18px;
+    }
+
+    .product-content {
+        padding: 22px;
+    }
+
+    .product-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .access-btn {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .price {
+        font-size: 1.7rem;
+    }
+
+}

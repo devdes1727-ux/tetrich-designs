@@ -1,0 +1,58 @@
+<section class="services-section">
+
+    <div class="services-bg"></div>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h1>
+                Crafting Digital Experiences That Stand Out ✨
+            </h1>
+
+            <p>
+                I help startups and businesses create modern digital products with
+                clean UI, smooth UX, and scalable front-end experiences.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card" *ngFor="let service of services">
+
+                <div class="card-top">
+
+                    <div class="icon-box">
+                        {{ service.icon }}
+                    </div>
+
+                    <span class="service-number">
+                        {{ service.number }}
+                    </span>
+
+                </div>
+
+                <h3>
+                    {{ service.title }}
+                </h3>
+
+                <p>
+                    {{ service.description }}
+                </p>
+
+                <div class="card-footer">
+
+                    <a href="mailto:tetrichdesigns@gmail.com">
+                        Let's Talk →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

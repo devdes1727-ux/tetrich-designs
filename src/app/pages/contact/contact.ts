@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white pt-32 pb-24 px-6 md:px-12 transition-colors duration-300 flex items-center">
+    <div class="min-h-screen bg-slate-50 dark:bg-slate-600 text-slate-600 dark:text-white pt-32 pb-24 px-6 md:px-12 transition-colors duration-300 flex items-center">
       <div class="max-w-4xl mx-auto text-center w-full">
         
         <h1 class="text-5xl md:text-7xl font-extrabold mb-8">Let's create something <span class="text-orange-600 dark:text-orange-400">awesome</span> together.</h1>
