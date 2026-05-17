@@ -18,28 +18,12 @@ export class NavbarComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleDarkMode() {
-
-    document.documentElement.classList.toggle('dark');
-
-    localStorage.setItem(
-      'theme',
-      document.documentElement.classList.contains('dark')
-        ? 'dark'
-        : 'light'
-    );
-
+  downloadResume() {
+    const fileUrl = 'assets/resume/resume.pdf';
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = 'Punitha-Resume.pdf';
+    link.click();
   }
-
-  ngOnInit() {
-
-    const savedTheme = localStorage.getItem('theme');
-
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
-
-  }
-
 }
 

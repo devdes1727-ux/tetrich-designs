@@ -5,8 +5,37 @@
 
     <div class="container">
 
-        <!-- Back Button -->
-        <button (click)="goBack()" class="back-btn">← Back</button>
+        <div class="share">
+            <!-- Back Button -->
+            <button (click)="goBack()" class="back-btn">← Back</button>
+
+            <!-- SHARE -->
+            <aside class="share-sidebar">
+
+                <p>Share On</p>
+
+                <button type="button" aria-label="Share on Instagram" title="Share on Instagram">
+                    <img src="assets/images/insta.png" alt="Instagram">
+                </button>
+
+                <button type="button" aria-label="Share on Facebook" title="Share on Facebook">
+                    <img src="assets/images/fb.png" alt="Facebook">
+                </button>
+
+                <button type="button" aria-label="Share on Whatsapp" title="Share on Whatsapp">
+                    <img src="assets/images/wp.png" alt="Whatsapp">
+                </button>
+
+                <button type="button" aria-label="Share on LinkedIn" title="Share on LinkedIn">
+                    <img src="assets/images/lk.png" alt="LinkedIn">
+                </button>
+
+
+
+            </aside>
+        </div>
+
+
 
         <!-- Blog Content -->
         <ng-container *ngIf="blog; else notFound">
@@ -28,7 +57,7 @@
                     <!-- Author -->
                     <div class="author-card">
                         <div class="author-image">
-                            <img src="assets/images/punitha.png" alt="Punitha">
+                            <img src="assets/images/my-pic.png" alt="Punitha">
                         </div>
 
                         <div class="author-info">
@@ -40,31 +69,6 @@
                             <span>8 min read</span>
                         </div>
                     </div>
-
-                    <!-- SHARE -->
-                    <aside class="share-sidebar">
-
-                        <p>Share On</p>
-
-                        <button type="button" aria-label="Share on Twitter" title="Share on Twitter">
-                            Twitter
-                        </button>
-
-                        <button type="button" aria-label="Share on Facebook" title="Share on Facebook">
-                            Facebook
-                        </button>
-
-                        <button type="button" aria-label="Share on Whatsapp" title="Share on Whatsapp">
-                            Whatsapp
-                        </button>
-
-                        <button type="button" aria-label="Share on LinkedIn" title="Share on LinkedIn">
-                            LinkedIn
-                        </button>
-
-                        
-
-                    </aside>
 
                 </section>
 
@@ -81,17 +85,8 @@
             <!-- ARTICLE -->
             <section class="article-wrapper">
 
-
-
                 <!-- CONTENT -->
                 <article class="article-content">
-
-                    <p>
-                        Great design goes beyond aesthetics. It solves problems,
-                        improves usability, and creates meaningful experiences for users.
-                        Every successful digital product begins with understanding the
-                        people who will use it.
-                    </p>
 
                     <h2>The Importance of Process</h2>
 
@@ -99,6 +94,13 @@
                         A strong design process helps teams move with clarity and
                         confidence. From research to prototyping and testing, each step
                         contributes to building products that are intuitive and impactful.
+                    </p>
+
+                    <p>
+                        Great design goes beyond aesthetics. It solves problems,
+                        improves usability, and creates meaningful experiences for users.
+                        Every successful digital product begins with understanding the
+                        people who will use it.
                     </p>
 
                     <!-- HIGHLIGHT -->

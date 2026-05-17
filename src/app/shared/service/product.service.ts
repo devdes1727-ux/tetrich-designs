@@ -33,8 +33,8 @@ export class ProductService {
       price: 49,
       rating: 4.9,
       image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'A premium, dark-mode focused UI kit featuring neon accents and glassmorphism components.',
-      tags: ['Figma', 'UI Kit', 'Dark Mode']
+      description: 'A premium',
+      tags: ['Figma', 'UI Kit']
     },
     {
       id: 3,

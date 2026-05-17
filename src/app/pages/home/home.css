@@ -671,6 +671,12 @@ img {
         justify-content: center;
     }
 
+    .hero-buttons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }

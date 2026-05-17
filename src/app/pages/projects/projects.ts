@@ -24,7 +24,7 @@ export class ProjectsComponent {
 
         {
             id: 1,
-            icon: 'assets/images/coffee website landing.jpg',
+            icon: 'assets/images/coffee.jpg',
             title: 'Coffee Website',
             category: 'Web Design',
             description: 'Modern coffee brand landing page UI design.'
@@ -49,6 +49,46 @@ export class ProjectsComponent {
         {
             id: 4,
             icon: 'assets/images/mario.jpg',
+            title: 'Mario Documentation',
+            category: 'UI UX',
+            description: 'Game UX and documentation project.'
+        },
+
+        {
+            id: 5,
+            icon: 'assets/images/stitch-ux.jpg',
+            title: 'Mario Documentation',
+            category: 'UI UX',
+            description: 'Game UX and documentation project.'
+        },
+
+        {
+            id: 6,
+            icon: 'assets/images/stitch-ui.jpg',
+            title: 'Mario Documentation',
+            category: 'UI UX',
+            description: 'Game UX and documentation project.'
+        },
+
+        {
+            id: 7,
+            icon: 'assets/images/mario.jpg',
+            title: 'Mario Documentation',
+            category: 'UI UX',
+            description: 'Game UX and documentation project.'
+        },
+
+        {
+            id: 8,
+            icon: 'assets/images/courier-ux.jpg',
+            title: 'Mario Documentation',
+            category: 'UI UX',
+            description: 'Game UX and documentation project.'
+        },
+
+        {
+            id: 9,
+            icon: 'assets/images/courier-ui.jpg',
             title: 'Mario Documentation',
             category: 'UI UX',
             description: 'Game UX and documentation project.'
