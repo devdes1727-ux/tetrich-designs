@@ -3,28 +3,31 @@
 }
 
 .container {
-    width: 90%;
+    max-width: 1080px;
     margin: auto;
 }
 
 .back-btn {
     display: block;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     gap: 10px;
     text-decoration: none;
     color: #111;
     font-weight: 600;
 }
+.back-btn:hover{
+    color: #ea580c;
+}
 
 .project-hero {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 40px;
     align-items: center;
 }
 
@@ -51,12 +54,13 @@
 
 .hero-image img {
     width: 100%;
-    border-radius: 24px;
+    border-radius: 20px;
 }
 
-.project-section img {
-    width: 100%;
-    margin-bottom: 100px;
+.project-section {
+    max-width: 1080px;
+    display: block;
+    margin: 0 auto 40px;
 }
 
 

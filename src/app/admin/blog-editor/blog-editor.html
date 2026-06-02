@@ -1,0 +1,122 @@
+<div class="editor-overlay">
+
+    <div class="editor-modal">
+
+        <button class="close-btn" (click)="closeModal()">
+            ✕
+        </button>
+
+        <h2>Add New Blog</h2>
+
+        <!-- TITLE -->
+
+        <div class="form-group">
+
+            <label>Blog Title</label>
+
+            <input type="text" placeholder="Enter blog title" [(ngModel)]="title" />
+
+        </div>
+
+        <!-- DESCRIPTION -->
+
+        <div class="form-group">
+
+            <label>Short Description</label>
+
+            <textarea rows="3" placeholder="Enter short description" [(ngModel)]="description">
+      </textarea>
+
+        </div>
+
+        <!-- CATEGORY -->
+
+        <div class="form-group">
+
+            <label>Category</label>
+
+            <select [(ngModel)]="category">
+
+                <option value="">Select Category</option>
+
+                <option value="UI/UX">UI/UX</option>
+
+                <option value="Development">Development</option>
+
+                <option value="Design Systems">Design Systems</option>
+
+            </select>
+
+        </div>
+
+        <!-- IMAGE URL -->
+
+        <div class="form-group">
+
+            <label>Thumbnail Image URL</label>
+
+            <input type="text" placeholder="Paste image URL" [(ngModel)]="image" />
+
+        </div>
+
+        <!-- READ TIME -->
+
+        <div class="form-group">
+
+            <label>Read Time</label>
+
+            <input type="text" placeholder="Example: 5 min read" [(ngModel)]="readTime" />
+
+        </div>
+
+        <!-- SNIPPET -->
+
+        <div class="form-group">
+
+            <label>Snippet</label>
+
+            <textarea rows="3" placeholder="Short preview text" [(ngModel)]="snippet">
+  </textarea>
+
+        </div>
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+            <label>Publish Date</label>
+
+            <input type="date" [(ngModel)]="publishDate" />
+
+        </div>
+
+        <!-- IMAGE -->
+
+        <div class="form-group">
+
+            <label>Upload Thumbnail</label>
+
+            <input type="file" />
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="form-group">
+
+            <label>Blog Content</label>
+
+            <quill-editor [(ngModel)]="content" placeholder="Write your blog content here...">
+            </quill-editor>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="publish-btn" type="button" (click)="publishBlog()">
+            Publish Blog
+        </button>
+
+    </div>
+
+</div>

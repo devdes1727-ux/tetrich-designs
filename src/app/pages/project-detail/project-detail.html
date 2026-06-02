@@ -13,23 +13,24 @@
                     <a routerLink="/projects" class="back-btn"> ← Back</a>
 
                     <span class="project-label">
-                        UI/UX Case Study
+                        {{ project?.category || 'UI/UX Case Study' }}
                     </span>
 
                     <h1>
-                        Project {{ projectId }}
+                        {{ project?.title || ('Project ' + projectId) }}
                     </h1>
 
                     <p>
-                        A modern user-centered digital experience
-                        focused on usability, accessibility and clean interaction design.
+                        {{ project?.description || 'A modern user-centered digital experience focused on usability,
+                        accessibility and clean interaction design.' }}
                     </p>
 
                 </div>
 
                 <div class="hero-image">
 
-                    <img src="assets/images/Ebike.jpg" alt="Project Preview">
+                    <img [src]="project?.thumbImage || 'assets/images/default-thumb.jpg'"
+                        [alt]="project?.title || 'Project Preview'" title="{{ project?.title || 'Project Preview' }}">
 
                 </div>
 
@@ -44,10 +45,12 @@
     <section class="project-section">
 
         <div class="container">
-            <img src="assets/images/courier-ui.jpg" alt="courier ui project" class="section-icon">
+
+            <img *ngFor="let image of project?.images" [src]="image" alt="project?.title || 'Project overview'"
+                [title]="project?.title || 'Project overview'" class="section-icon">
+
         </div>
 
     </section>
 
-    
 </section>

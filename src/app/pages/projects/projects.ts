@@ -14,9 +14,12 @@ export class ProjectsComponent {
     selectedCategory = 'All';
 
     categories = [
+        'Digital Illustration',
+        'Game UI',
         'UI UX',
         'Branding',
-        'Mobile App',
+        'Mobile App UI',
+        'Landing page design',
         'Web Design'
     ];
 
@@ -25,23 +28,23 @@ export class ProjectsComponent {
         {
             id: 1,
             icon: 'assets/images/coffee.jpg',
-            title: 'Coffee Website',
-            category: 'Web Design',
+            title: 'Coffee website landing pages',
+            category: 'Landing page design',
             description: 'Modern coffee brand landing page UI design.'
         },
 
         {
             id: 2,
             icon: 'assets/images/Ebike.jpg',
-            title: 'Bijiliride',
-            category: 'Mobile App',
+            title: 'Bijiliride - E-bike rental app',
+            category: 'Mobile App UI',
             description: 'E-bike rental mobile app experience design.'
         },
 
         {
             id: 3,
             icon: 'assets/images/dhaadyism.jpg',
-            title: 'Dhaadyism',
+            title: 'Dhaadyism - Mushtache & Beard oil brand',
             category: 'Branding',
             description: 'Brand identity and packaging design.'
         },
@@ -50,47 +53,46 @@ export class ProjectsComponent {
             id: 4,
             icon: 'assets/images/mario.jpg',
             title: 'Mario Documentation',
-            category: 'UI UX',
+            category: 'Game UI',
             description: 'Game UX and documentation project.'
         },
 
         {
             id: 5,
             icon: 'assets/images/stitch-ux.jpg',
-            title: 'Mario Documentation',
+            title: 'Tailorbird - Garment stitching app',
             category: 'UI UX',
-            description: 'Game UX and documentation project.'
+            description: 'Garment stitching mobile app UX design.'
         },
 
         {
             id: 6,
             icon: 'assets/images/stitch-ui.jpg',
-            title: 'Mario Documentation',
+            title: 'Tailorbird - Garment stitching app',
             category: 'UI UX',
-            description: 'Game UX and documentation project.'
+            description: 'Garment stitching mobile app UI design.'
         },
 
         {
             id: 7,
-            icon: 'assets/images/mario.jpg',
-            title: 'Mario Documentation',
+            icon: 'assets/images/courier-ux.jpg',
+            title: 'Courier app - UX project',
             category: 'UI UX',
-            description: 'Game UX and documentation project.'
+            description: 'Independent and Multiple courier mobile app UX design.'
         },
 
         {
             id: 8,
-            icon: 'assets/images/courier-ux.jpg',
-            title: 'Mario Documentation',
+            icon: 'assets/images/courier-ui.jpg',
+            title: 'Courier app - UI project',
             category: 'UI UX',
-            description: 'Game UX and documentation project.'
+            description: 'Independent and Multiple courier mobile app UI design.'
         },
-
         {
             id: 9,
-            icon: 'assets/images/courier-ui.jpg',
-            title: 'Mario Documentation',
-            category: 'UI UX',
+            icon: 'assets/images/illus.png',
+            title: '2D flat illustrations',
+            category: 'Digital illustration',
             description: 'Game UX and documentation project.'
         }
 

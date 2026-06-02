@@ -1,87 +1,95 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Blog, BLOGS } from '../../data/blogs-data';
 
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './blog-detail.html',
   styleUrls: ['./blog-detail.css']
 })
-export class BlogDetailComponent implements OnInit {
+export class BlogDetailComponent {
 
-  blog: any;
+  blog?: Blog;
+  scrollProgress: number = 0;
 
-  private route = inject(ActivatedRoute);
-  private location = inject(Location);
+  activeSectionId: string = '';
 
-  private blogsData = [
-    {
-      id: 1,
-      title: 'Beginner Guide to UI/UX Design',
-      date: 'Oct 12, 2026',
-      category: 'Design',
-      image:
-        'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80',
-      snippet:
-        'Starting in UI/UX can feel overwhelming. This guide breaks down the essential principles, tools, and mindsets you need to kickstart your career.'
-    },
-    {
-      id: 2,
-      title: 'Difference Between UI and UX',
-      date: 'Sep 28, 2026',
-      category: 'Concept',
-      image:
-        'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80',
-      snippet:
-        'Often used interchangeably, UI and UX are distinct disciplines. We look at where one ends and the other begins.'
-    },
-    {
-      id: 3,
-      title: 'How to Create Case Study Portfolio',
-      date: 'Sep 10, 2026',
-      category: 'Career',
-      image:
-        'https://images.unsplash.com/photo-1507238692062-5a042e9a37c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80',
-      snippet:
-        'Your portfolio is your biggest asset. Learn how to structure your case studies effectively.'
-    },
-    {
-      id: 4,
-      title: 'Mobile First Design Principles',
-      date: 'Aug 22, 2026',
-      category: 'Responsive',
-      image:
-        'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80',
-      snippet:
-        'With mobile traffic dominating the web, designing for mobile-first experiences is essential.'
-    },
-    {
-      id: 5,
-      title: 'Design Systems Explained',
-      date: 'Aug 05, 2026',
-      category: 'Systems',
-      image:
-        'https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80',
-      snippet:
-        'A deep dive into building scalable design systems for modern digital products.'
-    }
-  ];
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    const slug = this.route.snapshot.paramMap.get('slug');
+    this.blog = BLOGS.find(blog => blog.slug === slug);
+  }
 
-    this.route.paramMap.subscribe(params => {
+  @HostListener('window:scroll', [])
+  onWindowScroll(): void {
 
-      const id = Number(params.get('id'));
+    const scrollTop =
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
 
-      if (id) {
-        this.blog = this.blogsData.find(blog => blog.id === id);
+    const scrollHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    this.scrollProgress = (scrollTop / scrollHeight) * 100;
+
+    // ✅ ADDED — find which heading is currently in view
+    if (!this.blog) return;
+
+    const offset = 120;
+
+    const headingIndices = this.blog.content
+      .map((block, i) => ({ block, i }))
+      .filter(({ block }) => block.type === 'heading')
+      .map(({ i }) => i);
+
+    for (let j = headingIndices.length - 1; j >= 0; j--) {
+      const id = 'section-' + headingIndices[j];
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= offset) {
+        this.activeSectionId = id;
+        return;
       }
-    });
+    }
+
+    this.activeSectionId = 'section-' + (headingIndices[0] ?? 0);
+
   }
 
-  goBack(): void {
-    this.location.back();
+  scrollToSection(sectionId: string): void {
+
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+
+      const offset = 100;
+
+      const topPosition =
+        element.getBoundingClientRect().top +
+        window.scrollY -
+        offset;
+
+      window.scrollTo({
+        top: topPosition,
+        behavior: 'smooth'
+      });
+
+    }
+
   }
+
+  shareBlog(): void {
+
+    const currentUrl = window.location.href;
+
+    navigator.clipboard.writeText(currentUrl);
+
+    alert('Blog link copied successfully!');
+
+  }
+
 }

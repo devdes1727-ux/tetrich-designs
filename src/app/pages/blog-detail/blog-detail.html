@@ -1,199 +1,131 @@
-<div class="blog-detail-page">
-    <!-- Background Elements -->
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
+<section class="blog-detail-page">
 
-    <div class="container">
+    <!-- PROGRESS BAR -->
+    <div class="reading-progress">
+        <div class="progress-bar" [style.width.%]="scrollProgress">
+        </div>
+    </div>
 
-        <div class="share">
-            <!-- Back Button -->
-            <button (click)="goBack()" class="back-btn">← Back</button>
+    <!-- HERO -->
+    <section class="blog-hero">
 
-            <!-- SHARE -->
-            <aside class="share-sidebar">
+        <div class="container">
 
-                <p>Share On</p>
+            <div class="hero-content">
+                <div class="back-btn">
+                    <a routerLink="/blogs">
+                        ← Back to Blogs
+                    </a>
+                </div>
 
-                <button type="button" aria-label="Share on Instagram" title="Share on Instagram">
-                    <img src="assets/images/insta.png" alt="Instagram">
-                </button>
+                <span class="blog-category">
+                    {{ blog?.category }}
+                </span>
 
-                <button type="button" aria-label="Share on Facebook" title="Share on Facebook">
-                    <img src="assets/images/fb.png" alt="Facebook">
-                </button>
+                <h1>
+                    {{ blog?.title }}
+                </h1>
 
-                <button type="button" aria-label="Share on Whatsapp" title="Share on Whatsapp">
-                    <img src="assets/images/wp.png" alt="Whatsapp">
-                </button>
+                <p class="blog-subtitle">
+                    {{ blog?.description }}
+                </p>
 
-                <button type="button" aria-label="Share on LinkedIn" title="Share on LinkedIn">
-                    <img src="assets/images/lk.png" alt="LinkedIn">
-                </button>
+                <div class="blog-meta">
 
+                    <div class="author-info">
 
+                        <img src="assets/images/my-pic.png" alt="Author">
 
-            </aside>
+                        <div>
+                            <h4>Punitha</h4>
+                            <span>May 26, 2026 · 8 min read</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div>
+                <img class="cover-image" [src]="blog?.image" alt="blog?.title">
+            </div>
+
         </div>
 
+    </section>
 
+    <!-- CONTENT -->
+    <section class="blog-content-section">
 
-        <!-- Blog Content -->
-        <ng-container *ngIf="blog; else notFound">
+        <div class="container content-layout">
 
-            <div class="blog-detail-header">
-                <!-- HERO -->
-                <section class="hero-section">
+            <article class="blog-content">
 
-                    <div class="blog-meta">
-                        <span class="category-badge">{{ blog.category }}</span>
-                        <span class="meta-divider"></span>
-                        <span class="blog-date">{{ blog.date }}</span>
-                    </div>
+                <ng-container *ngFor="let block of blog?.content; let i = index">
 
-                    <h1 class="blog-title">{{ blog.title }}</h1>
+                    <!-- ✅ ADDED [id] for scroll target -->
+                    <h2 *ngIf="block.type === 'heading'" [id]="'section-' + i">
+                        {{ block.title }}
+                    </h2>
 
-                    <p class="blog-snippet">{{ blog.snippet }}</p>
-
-                    <!-- Author -->
-                    <div class="author-card">
-                        <div class="author-image">
-                            <img src="assets/images/my-pic.png" alt="Punitha">
-                        </div>
-
-                        <div class="author-info">
-                            <span>Punitha </span>
-                            <span>- UI/UX Designer & Product Thinker</span>
-                        </div>
-
-                        <div class="read-time">
-                            <span>8 min read</span>
-                        </div>
-                    </div>
-
-                </section>
-
-                <!-- FEATURED IMAGE -->
-                <section class="featured-image-section">
-                    <div class="featured-image-wrapper">
-                        <img [src]="blog.image" alt="blog.title">
-                    </div>
-                </section>
-            </div>
-
-
-
-            <!-- ARTICLE -->
-            <section class="article-wrapper">
-
-                <!-- CONTENT -->
-                <article class="article-content">
-
-                    <h2>The Importance of Process</h2>
-
-                    <p>
-                        A strong design process helps teams move with clarity and
-                        confidence. From research to prototyping and testing, each step
-                        contributes to building products that are intuitive and impactful.
+                    <p *ngIf="block.type === 'paragraph'">
+                        {{ block.text }}
                     </p>
 
-                    <p>
-                        Great design goes beyond aesthetics. It solves problems,
-                        improves usability, and creates meaningful experiences for users.
-                        Every successful digital product begins with understanding the
-                        people who will use it.
-                    </p>
+                    <ul *ngIf="block.type === 'list'" class="styled-list">
+                        <li *ngFor="let item of block.items">
+                            {{ item }}
+                        </li>
+                    </ul>
 
-                    <!-- HIGHLIGHT -->
-                    <div class="highlight-card">
-                        <h3>Key Takeaways</h3>
+                </ng-container>
 
-                        <ul>
-                            <li>Start with understanding user problems</li>
-                            <li>Create wireframes before visuals</li>
-                            <li>Validate ideas through testing</li>
-                            <li>Design systems improve consistency</li>
-                            <li>Iteration is essential for growth</li>
-                        </ul>
-                    </div>
+            </article>
 
-                    <blockquote>
-                        “Design is not just what it looks like and feels like.
-                        Design is how it works.”
-                    </blockquote>
+            <!-- SIDEBAR -->
+            <aside class="blog-sidebar">
 
-                    <p>
-                        Consistency, accessibility, and usability should always remain
-                        at the center of every design decision.
-                    </p>
+                <!-- TABLE OF CONTENT -->
+                <div class="sidebar-card">
 
-                    <!-- GRID -->
-                    <div class="content-grid">
+                    <h3>
+                        Contents
+                    </h3>
 
-                        <div class="grid-card">
-                            <h4>User Research</h4>
-                            <p>Understand your audience before building solutions.</p>
-                        </div>
+                    <ul>
 
-                        <div class="grid-card">
-                            <h4>Wireframing</h4>
-                            <p>Structure layouts clearly before visual design begins.</p>
-                        </div>
+                        <li *ngFor="let block of blog?.content; let i = index">
 
-                        <div class="grid-card">
-                            <h4>Testing</h4>
-                            <p>Gather feedback early to improve usability.</p>
-                        </div>
+                            <a
+                                *ngIf="block.type === 'heading'"
+                                (click)="scrollToSection('section-' + i)"
+                                [class.active]="activeSectionId === 'section-' + i">
+                                {{ block.title }}
+                            </a>
 
-                        <div class="grid-card">
-                            <h4>Iteration</h4>
-                            <p>Refine continuously based on real insights.</p>
-                        </div>
+                        </li>
 
-                    </div>
+                    </ul>
 
-                </article>
-
-            </section>
-
-            <!-- CTA -->
-            <section class="bottom-cta">
-
-                <div class="cta-content">
-                    <h2>Enjoyed this article?</h2>
-                    <p>
-                        Explore more UI/UX insights, product thinking, and design resources.
-                    </p>
                 </div>
 
-                <button (click)="goBack()" class="cta-btn">
-                    Explore More Blogs
-                </button>
+                <!-- SHARE CARD -->
+                <div class="sidebar-card share-card">
 
-            </section>
+                    <h3>
+                        Share Blog
+                    </h3>
 
-        </ng-container>
+                    <button (click)="shareBlog()">
+                        Copy Blog Link
+                    </button>
 
-        <!-- NOT FOUND -->
-        <ng-template #notFound>
-
-            <div class="not-found">
-
-                <div class="not-found-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M9.172 9a4 4 0 015.656 0M9 15h6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
                 </div>
 
-                <h2>Blog Article Not Found</h2>
+            </aside>
 
-                <p>The article you're looking for doesn't exist or may have been removed.</p>
+        </div>
 
-                <button (click)="goBack()">Go Back</button>
+    </section>
 
-            </div>
-
-        </ng-template>
-
-    </div>
-</div>
+</section>

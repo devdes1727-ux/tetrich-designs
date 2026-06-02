@@ -1,124 +1,91 @@
-<section class="blogs-page">
+<!-- BLOG HERO -->
+<section class="blog-hero">
 
-    <!-- Hero -->
-    <div class="blogs-hero">
+  <div class="container">
 
-        <h1>
-            The Blogs
-        </h1>
+    <h1>
+      Insights, Ideas & Design Stories
+    </h1>
 
-        <p>
-            Explore insights, tutorials, UI/UX strategies, and practical experiences
-            from my journey as a product designer.
-        </p>
+    <p>
+      Explore articles about UI/UX design, web development,
+      creativity, user experience, and modern digital products.
+    </p>
 
-        <!-- Categories -->
-        <div class="category-filter">
+    <div class="search-box">
+      <input type="text" placeholder="Search blogs..." [(ngModel)]="searchTerm" (input)="filterBlogs()">
+    </div>
 
-            <button *ngFor="let category of categories" (click)="selectCategory(category)"
-                [class.active]="selectedCategory === category">
+    <div class="category-filter">
+      <button *ngFor="let category of categories" [class.active]="selectedCategory === category"
+        (click)="filterByCategory(category)">
+        {{ category }}
+      </button>
+    </div>
 
-                {{ category }}
+  </div>
 
-            </button>
+</section>
+
+<!-- BLOG LIST -->
+<section class="blog-list-section">
+
+  <div class="container">
+
+    
+
+    <!-- BLOG GRID -->
+    <div class="blog-grid">
+
+      <article class="blog-card" *ngFor="let blog of filteredBlogs">
+
+        <div class="blog-image">
+          <img [src]="blog.image" alt="blog.title">
+        </div>
+
+        <div class="blog-content">
+
+          <span class="blog-category">
+            {{ blog.category }}
+          </span>
+
+          <h2>
+            {{ blog.title }}
+          </h2>
+
+          <div class="blog-meta">
+
+            <span>
+              {{ blog.date }}
+            </span>
+
+            <span>
+              {{ blog.readTime }}
+            </span>
+
+          </div>
+
+          <a [routerLink]="['/blogs', blog.slug]" class="read-btn">
+            Read More →
+          </a>
 
         </div>
 
-    </div>
-
-    <!-- Featured Blog -->
-    <div class="featured-blog" *ngIf="blogs.length">
-
-        <div class="featured-image">
-            <img [src]="blogs[0].image" alt="blogs[0].title">
-        </div>
-
-        <div class="featured-content">
-
-            <div class="featured-meta">
-
-                <span class="category">
-                    {{ blogs[0].category }}
-                </span>
-
-                <span>
-                    {{ blogs[0].date }}
-                </span>
-
-                <span>
-                    {{ blogs[0].readTime }}
-                </span>
-
-            </div>
-
-            <h2>
-                {{ blogs[0].title }}
-            </h2>
-
-            <p>
-                {{ blogs[0].snippet }}
-            </p>
-
-            <a [routerLink]="['/blogs', blogs[0].id]">
-                Read Full Article
-            </a>
-
-        </div>
+      </article>
 
     </div>
 
-    <!-- Blog Grid -->
-    <div class="blogs-grid">
+    <!-- EMPTY STATE -->
+    <div class="empty-state" *ngIf="filteredBlogs.length === 0">
 
-        <article *ngFor="let blog of filteredBlogs" class="blog-card">
+      <h3>No blogs found</h3>
 
-            <div class="blog-image">
-
-                <img [src]="blog.image" alt="blog.title">
-
-                <div class="blog-category">
-                    {{ blog.category }}
-                </div>
-
-            </div>
-
-            <div class="blog-content">
-
-                <div class="blog-meta">
-
-                    <span>{{ blog.date }}</span>
-
-                    <span class="dot"></span>
-
-                    <span>{{ blog.readTime }}</span>
-
-                </div>
-
-                <h3>
-                    {{ blog.title }}
-                </h3>
-
-                <p>
-                    {{ blog.snippet }}
-                </p>
-
-                <a [routerLink]="['/blogs', blog.id]">
-
-                    Read More
-
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                        stroke="currentColor">
-
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-
-                    </svg>
-
-                </a>
-
-            </div>
-
-        </article>
+      <p>
+        Try searching with another keyword.
+      </p>
 
     </div>
+
+  </div>
 
 </section>

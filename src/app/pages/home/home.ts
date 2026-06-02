@@ -2,6 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+export interface OngoingProject {
+  title: string;
+  client: string;
+  status: string;
+  progress: number;
+  description: string;
+  technologies: string[];
+}
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -10,6 +19,14 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./home.css']
 })
 export class HomeComponent {
+
+  projectsCompleted: number = 25;
+
+  yearsExperience: number = 3;
+
+  uiProjects: number = 40;
+
+  clientSatisfaction: number = 98;
 
   activeSkill: string | null = null;
 
@@ -76,6 +93,65 @@ export class HomeComponent {
 
 
   ];
+
+  designProcess = [
+
+    {
+      number: '01',
+      image: 'assets/icons/idea.png',
+      title: 'Understand Your Idea',
+      description:
+        'Understanding users, goals, and problems through research and analysis.'
+    },
+
+    {
+      number: '02',
+      image: 'assets/icons/pencil.png',
+      title: 'Plan & Wireframe',
+      description:
+        'Planning user flows, structure, and experience before designing.'
+    },
+
+    {
+      number: '03',
+      image: 'assets/icons/nib-with-arc.png',
+      title: 'Design with Love',
+      description:
+        'Creating simple layouts to organize content and interactions clearly.'
+    },
+
+    {
+      number: '04',
+      image: 'assets/icons/website.png',
+      title: 'Prototype & Test',
+      description:
+        'Designing modern and user-friendly interfaces with strong visuals.'
+    },
+
+    {
+      number: '05',
+      image: 'assets/icons/launch.png',
+      title: 'Deliver & Support',
+      description:
+        'Building interactive prototypes to test user experience and flows.'
+    }
+
+
+  ];
+
+  ongoingProjects: OngoingProject[] = [
+
+    {
+      title: 'Healthcare Management System',
+      client: 'Confidential Client',
+      status: 'In Progress',
+      progress: 75,
+      description:
+        'Building a modern healthcare platform with appointment scheduling, patient records, and reporting features.',
+      technologies: ['Angular', '.NET Core', 'Azure', 'SQL Server']
+    }
+  ];
+
 
 
   skills = [
@@ -163,3 +239,4 @@ export class HomeComponent {
   ];
 
 }
+

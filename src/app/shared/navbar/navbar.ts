@@ -14,6 +14,7 @@ export class NavbarComponent {
   cartService = inject(CartService);
   isMenuOpen = false;
 
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

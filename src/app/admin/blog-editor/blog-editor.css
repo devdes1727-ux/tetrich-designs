@@ -1,0 +1,149 @@
+:host {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+}
+
+.editor-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+.editor-modal {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    position: relative;
+
+}
+
+.editor-modal h2 {
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+.form-group label {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #222;
+
+}
+
+.editor-modal input,
+.editor-modal textarea,
+.editor-modal select {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dcdcdc;
+
+    outline: none;
+
+    font-size: 16px;
+
+}
+
+quill-editor {
+
+    height: 300px;
+
+}
+
+.publish-btn {
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background: black;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+.close-btn {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #f1f1f1;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}

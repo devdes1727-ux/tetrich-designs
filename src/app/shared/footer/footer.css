@@ -25,11 +25,9 @@
 }
 
 .footer-container {
-    width: 90%;
+    max-width: 1080px;
     position: relative;
     z-index: 1;
-
-    max-width: 1200px;
     margin: auto;
     padding: 40px 0px 20px;
 
