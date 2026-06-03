@@ -45,16 +45,6 @@ export class ProductService {
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       description: 'Over 100+ meticulously crafted wireframes to kickstart your next e-commerce mobile application.',
       tags: ['Wireframes', 'Mobile', 'UX']
-    },
-    {
-      id: 4,
-      title: 'Minimalist Icon Pack',
-      category: 'Assets',
-      price: 19,
-      rating: 4.7,
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: '500+ perfectly balanced, sharp, and consistent minimalist icons in SVG format.',
-      tags: ['Icons', 'SVG', 'Minimalist']
     }
   ];
 

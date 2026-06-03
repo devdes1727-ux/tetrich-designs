@@ -94,8 +94,8 @@
 }
 
 .category-filter button:hover {
-    background: #6366f1;
-    color: white;
+    background: #e1e1ff;
+    color: #6366f1;
 }
 
 .category-filter button.active {
@@ -117,7 +117,6 @@
 /*=========================
    BLOG CARD
 =========================*/
-
 .blog-card {
     background: white;
     border-radius: 20px;
@@ -144,7 +143,6 @@
     transition: 0.5s ease;
 }
 
-
 .blog-content {
     padding: 20px;
 }
@@ -164,7 +162,7 @@
     font-size: 16px;
     font-weight: 600;
     color: #111827;
-    height: 48px;
+    margin-bottom: 10px;
 }
 
 .blog-content p {
@@ -175,7 +173,7 @@
 .blog-meta {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     color: #9ca3af;
     font-size: 14px;
 }

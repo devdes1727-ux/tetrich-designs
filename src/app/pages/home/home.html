@@ -131,7 +131,7 @@
         <div class="section-header">
 
             <span class="section-badge">
-                Design Process
+                My Design Process
             </span>
 
             <h2>
@@ -189,10 +189,9 @@
 <!--Ongoing project-->
 <section class="ongoing-projects-section">
 
-    <div class="container">
-
+    <div class="ongoing-container">
         <div class="section-header">
-            <span class="section-tag">
+            <span class="section-badge">
                 Current Work
             </span>
 
@@ -207,52 +206,55 @@
         </div>
 
         <div class="projects-grid">
-
             <div class="project-card" *ngFor="let project of ongoingProjects">
-
-                <div class="project-top">
-
-                    <span class="status-badge">
-                        {{ project.status }}
-                    </span>
-
-                    <span class="progress-text">
-                        {{ project.progress }}%
-                    </span>
-
+                <div>
+                    <img src="assets/images/coffee.jpg" alt="Ongoing Projects" class="section-image">
                 </div>
+                <div>
+                    <div class="project-top">
 
-                <h3>
-                    {{ project.title }}
-                </h3>
+                        <span class="status-badge">
+                            {{ project.status }}
+                        </span>
 
-                <h4>
-                    {{ project.client }}
-                </h4>
+                        <span class="progress-text">
+                            {{ project.progress }}%
+                        </span>
 
-                <p>
-                    {{ project.description }}
-                </p>
+                    </div>
 
-                <div class="tech-stack">
+                    <h3>
+                        {{ project.title }}
+                    </h3>
 
-                    <span *ngFor="let tech of project.technologies" class="tech-chip">
+                    <h4>
+                        {{ project.client }}
+                    </h4>
 
-                        {{ tech }}
+                    <p>
+                        {{ project.description }}
+                    </p>
 
-                    </span>
+                    <div class="tech-stack">
 
-                </div>
+                        <span *ngFor="let tech of project.technologies" class="tech-chip">
 
-                <div class="progress-bar">
+                            {{ tech }}
 
-                    <div class="progress-fill" [style.width.%]="project.progress">
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill" [style.width.%]="project.progress">
+                        </div>
+
                     </div>
 
                 </div>
 
             </div>
-
         </div>
 
     </div>

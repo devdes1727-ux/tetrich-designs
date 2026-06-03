@@ -80,7 +80,7 @@ html {
 }
 
 .blog-hero h1 {
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 600;
 }
 
@@ -155,7 +155,7 @@ html {
 
 .blog-content {
     background: white;
-    padding: 40px;
+    padding: 20px;
     border-radius: 20px;
 }
 
@@ -266,6 +266,8 @@ html {
 
 .sidebar-card h3 {
     margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .sidebar-card ul {
@@ -274,7 +276,7 @@ html {
 }
 
 .sidebar-card li {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .sidebar-card a {
@@ -286,13 +288,11 @@ html {
 
 .sidebar-card a.active {
     color: #6366f1;
-    padding-left: 6px;
-    font-weight: 600;
 }
 
 .sidebar-card a:hover {
     color: #6366f1;
-    padding-left: 6px;
+
 }
 
 .share-card button {
